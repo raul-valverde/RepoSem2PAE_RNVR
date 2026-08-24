@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="591.0" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.sesion4.GradeController">
+
+   <children>
+      <Label text="Registro de notas" textFill="#d11e1e">
+         <padding>
+            <Insets bottom="5.0" top="5.0" />
+         </padding>
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </Label>
+      <Label text="Nombre Completo:" />
+      <TextField fx:id="txtName" />
+      <Label text="Carrera:" />
+      <TextField fx:id="txtMajor" />
+      <Label text="Nota:" />
+      <TextField fx:id="txtGrade" />
+      <Label fx:id="lblCount" text="Registro guardados: 0" textFill="#05b153" />
+      <Button fx:id="btnSave" mnemonicParsing="false" onAction="#saveButtonAction" text="Guardar" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Button>
+   </children>
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+</VBox>

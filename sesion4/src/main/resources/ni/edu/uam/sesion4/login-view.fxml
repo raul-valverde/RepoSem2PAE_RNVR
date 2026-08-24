@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="5.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+   <children>
+      <Label text="REGISTRO DE NOTAS" textFill="#0099ab">
+         <font>
+            <Font name="Book Antiqua Bold Italic" size="26.0" />
+         </font>
+      </Label>
+      <Label text="Usuario">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUser" promptText="Ingrese el usuario" />
+      <Label text="Contraseña">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <PasswordField promptText="Ingresa la contraseña" />
+      <Button fx:id="btnEnter" mnemonicParsing="false" text="Entrar">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label text="Label" />
+   </children>
+</VBox>
