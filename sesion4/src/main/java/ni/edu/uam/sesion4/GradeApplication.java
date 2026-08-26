@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class GradeApplication extends Application {
     public void start(Stage stage) throws IOException {
-    FXMLLoader fxmlLoader = new FXMLLoader(GradeApplication.class.getResource("grades-view.fxml"));
+    FXMLLoader fxmlLoader = new FXMLLoader(GradeApplication.class.getResource("login-view.fxml"));
     Scene scene = new Scene(fxmlLoader.load(), 500, 500);
         stage.setTitle("Universidad Americana");
         stage.setScene(scene);

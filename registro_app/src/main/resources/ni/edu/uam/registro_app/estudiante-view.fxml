@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="503.0" prefWidth="392.0" spacing="5.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.registro_app.controllers.EstudianteController">
+   <children>
+      <Label alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="29.0" prefWidth="231.0" text="Registro Estudiantes" textAlignment="CENTER" textFill="#0099ab">
+         <font>
+            <Font name="Bookman Old Style" size="21.0" />
+         </font>
+      </Label>
+      <Label text="Nombres" />
+      <TextField fx:id="txtNombres" promptText="Raúl Natanael" />
+      <Label text="Apellidos" />
+      <TextField fx:id="txtApellidos" promptText="Valvered Ruíz" />
+      <Label text="Carrera" />
+      <TextField fx:id="txtCarrera" promptText="Ing. de sistemas" />
+      <Label text="Fecha de Nacimiento" />
+      <DatePicker fx:id="dpFechaNac" promptText="Seleccione la fecha de Nacimiento" />
+      <CheckBox fx:id="chkTieneBeca" mnemonicParsing="false" text="Tiene Beca" />
+      <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#guardarOnClick" text="Agregar" />
+      <Label fx:id="lblRegistros" text="Registros almacenados :" />
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

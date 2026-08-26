@@ -32,6 +32,6 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Label text="ERROR: Usuario o contraseña invalida" textFill="RED" />
+      <Label fx:id="lblError" text="ERROR: Usuario o contraseña invalida" textFill="RED" />
    </children>
 </VBox>
