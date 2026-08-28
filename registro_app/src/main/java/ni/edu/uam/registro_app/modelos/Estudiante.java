@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,6 +17,9 @@ public class Estudiante {
     private String nombres;
     private String apellidos;
     private String carrera;
-    private LocalDate fechaNacimiento;
+    private LocalDate fechaNac;
     private Boolean tieneBeca;
+    private String facultad; // <--- FALTABA ESTE CAMPO
+    private String modalidad;
+    private List<String> clubes;
 }

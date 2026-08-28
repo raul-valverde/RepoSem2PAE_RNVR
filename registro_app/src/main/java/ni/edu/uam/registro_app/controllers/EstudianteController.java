@@ -36,11 +36,10 @@ public class EstudianteController {
 
     //para que inicie al abrir el formulario
     @FXML
-    public void iniciarform(){
-        cmbFacultad.getItems().addAll("FIA","FCAE","FCM","FO","FMDCC","College");
-        lvClubes.getItems().addAll("Club Ambiental","Club de lectura","Club Empresarial");
+    public void initialize(){
+        cmbFacultad.getItems().addAll("FIA", "FCAE", "FCM", "FO", "FMDCC", "College");
+        lvClubes.getItems().addAll("Club Ambiental", "Club de lectura", "Club Empresarial");
         lvClubes.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-
     }
 
 
@@ -54,18 +53,19 @@ public class EstudianteController {
         limpiarFormulario();
     }
 
-    private void leerDatos(){
+    private void leerDatos() {
         String nombre = txtNombres.getText();
         String apellido = txtApellidos.getText();
         String carrera = txtCarrera.getText();
-        LocalDate fechaac = dpFechaNac.getValue();
+        LocalDate fechaNac = dpFechaNac.getValue();
         Boolean tieneBeca = chkTieneBeca.isSelected();
-
-        //Agregamos los nuevos
+        String facultad = cmbFacultad.getValue();
+        // Captura de los nuevos controles
         String modalidad = rbManagua.isSelected() ? "Managua" : "Virtual";
         List<String> actividades = lvClubes.getSelectionModel().getSelectedItems();
 
-        agregarDatos(new Estudiante(nombre,apellido,carrera,fechaac,tieneBeca));
+        // AQUÍ ESTÁ EL CAMBIO: pasa los 7 parámetros al constructor
+        agregarDatos(new Estudiante(nombre, apellido, carrera, fechaNac, tieneBeca, facultad, modalidad, actividades));
     }
 
     private void agregarDatos(Estudiante estudiante){
@@ -79,25 +79,17 @@ public class EstudianteController {
 
     //Se agrega con clear par que limpie cada que le de click al boton se agrega y se limpia pero lo cuenta
     private void limpiarFormulario() {
-        // Vaciar cajas de texto (TextField)
-        txtNombres.clear();       // O txtNombre.setText("");
+        txtNombres.clear();
         txtApellidos.clear();
-
-        //Limpia la carrea
         txtCarrera.clear();
-
-        // Resetear el DatePicker
         dpFechaNac.setValue(null);
-
-        // Desmarcar el CheckBox
         chkTieneBeca.setSelected(false);
-
-        //Limpiar el combo box
         cmbFacultad.setValue(null);
-        //limpiar List view
         lvClubes.getSelectionModel().clearSelection();
-        //Limpiar radio buttons
 
+        // Desmarcar RadioButtons
+        rbManagua.setSelected(false);
+        rbVirtual.setSelected(false);
     }
 
 }
