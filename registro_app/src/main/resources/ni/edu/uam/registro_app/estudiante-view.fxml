@@ -16,8 +16,14 @@
       <TextField fx:id="txtNombres" promptText="Raúl Natanael" />
       <Label text="Apellidos" />
       <TextField fx:id="txtApellidos" promptText="Valvered Ruíz" />
+      <ComboBox fx:id="cmbFacultad" prefWidth="150.0" promptText="Facultad" />
       <Label text="Carrera" />
       <TextField fx:id="txtCarrera" promptText="Ing. de sistemas" />
+      <Label text="Sede" />
+      <RadioButton fx:id="rbManagua" mnemonicParsing="false" text="Managua" />
+      <RadioButton fx:id="rbVirtual" mnemonicParsing="false" text="Virtual" />
+      <Label text="Clubes UAM" />
+      <ListView fx:id="lvClubes" prefHeight="200.0" prefWidth="200.0" />
       <Label text="Fecha de Nacimiento" />
       <DatePicker fx:id="dpFechaNac" promptText="Seleccione la fecha de Nacimiento" />
       <CheckBox fx:id="chkTieneBeca" mnemonicParsing="false" text="Tiene Beca" />

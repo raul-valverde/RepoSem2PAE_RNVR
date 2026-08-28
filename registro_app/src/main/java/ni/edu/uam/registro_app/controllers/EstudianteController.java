@@ -1,14 +1,12 @@
 package ni.edu.uam.registro_app.controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import ni.edu.uam.registro_app.dao.EstudianteDao;
 import ni.edu.uam.registro_app.modelos.Estudiante;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class EstudianteController {
     EstudianteDao listado = new EstudianteDao();
@@ -26,6 +24,26 @@ public class EstudianteController {
     @FXML
     private Label lblRegistros;
 
+    //Agrego los nuevos controlers solicitados (combobox, list view y radio button)
+    @FXML
+    private ComboBox<String> cmbFacultad;
+    @FXML
+    private RadioButton rbManagua;
+    @FXML
+    private RadioButton rbVirtual;
+    @FXML
+    private ListView<String> lvClubes;
+
+    //para que inicie al abrir el formulario
+    @FXML
+    public void iniciarform(){
+        cmbFacultad.getItems().addAll("FIA","FCAE","FCM","FO","FMDCC","College");
+        lvClubes.getItems().addAll("Club Ambiental","Club de lectura","Club Empresarial");
+        lvClubes.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+    }
+
+
     //metodo
     @FXML
     protected void guardarOnClick(){
@@ -42,6 +60,11 @@ public class EstudianteController {
         String carrera = txtCarrera.getText();
         LocalDate fechaac = dpFechaNac.getValue();
         Boolean tieneBeca = chkTieneBeca.isSelected();
+
+        //Agregamos los nuevos
+        String modalidad = rbManagua.isSelected() ? "Managua" : "Virtual";
+        List<String> actividades = lvClubes.getSelectionModel().getSelectedItems();
+
         agregarDatos(new Estudiante(nombre,apellido,carrera,fechaac,tieneBeca));
     }
 
@@ -68,6 +91,13 @@ public class EstudianteController {
 
         // Desmarcar el CheckBox
         chkTieneBeca.setSelected(false);
+
+        //Limpiar el combo box
+        cmbFacultad.setValue(null);
+        //limpiar List view
+        lvClubes.getSelectionModel().clearSelection();
+        //Limpiar radio buttons
+
     }
 
 }
